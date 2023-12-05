@@ -28,7 +28,6 @@ const Board = () => {
       [0, 4, 8],
       [2, 4, 6],
     ];
-
     for (let logic of winnerLogic) {
       const [a, b, c] = logic;
       if (state[a] !== null && state[a] === state[b] && state[a] === state[c]) {
@@ -37,6 +36,16 @@ const Board = () => {
     }
     return false;
   };
+  const checkDraw = () => {
+    for (let i = 0; i < state.length; i++) {
+      if (state[i] === null) {
+        return false; // If any square is still empty, the game isn't a draw
+      }
+    }
+    return true; // All squares are filled, no winner detected, it's a draw
+  };
+
+  const isDraw = checkDraw();
 
   const isWinner = checkWinner();
 
@@ -77,6 +86,14 @@ const Board = () => {
                 </div>
               </>
             )}
+            {isDraw && !isWinner && (
+            <>
+              <h2>It's a <span> Draw!</span></h2>
+              <div className="reset">
+                <button onClick={handleReset}>Play Again</button>
+              </div>
+            </>
+          )}
           </div>
         </div>
       }

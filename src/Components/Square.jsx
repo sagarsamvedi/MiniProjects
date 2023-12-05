@@ -4,7 +4,6 @@ const Square = (props) => {
       <div className="square" onClick={props.onClick}>
         <h4>{props.value}</h4>
       </div>
-
     </>
   );
 };
