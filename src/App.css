@@ -72,3 +72,10 @@
 .reset button:hover{
     background-color: rgb(148, 64, 7);
 }
+
+@keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+  
