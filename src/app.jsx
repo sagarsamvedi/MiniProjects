@@ -9,7 +9,7 @@ export function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home/>}></Route>
-          <Route path="/quiz/:topic" element={<Questions/>}></Route>
+          <Route path="/quiz/:category" element={<Questions/>}></Route>
         </Routes>
       </Router>
     </>

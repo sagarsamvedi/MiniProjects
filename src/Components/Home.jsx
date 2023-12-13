@@ -1,21 +1,21 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import Categories from '../Data/Categories'
 
 const Home = () => {
   return (
     <>
+    <div className="home">
+
     <div className="title">
       <h1>Welcome to Technical Quiz</h1>
     </div>
     <div className="topic-container">
-            <Link to={'/quiz/linux'} className="topic">Linux</Link>
-            <Link to={'/quiz/c++'} className="topic">C++</Link>
-            <Link to={'/quiz/c'}className="topic">C</Link>
-            <Link to={'/quiz/mysql'}className="topic">MySQL</Link>
-            <Link to={'/quiz/javascript'}className="topic">JavaScript</Link>
-            <Link to={'/quiz/html'}className="topic">HTML</Link>
+    {Categories.map((data) => (
+      <Link to={`quiz/${data.value}`} className="topic">{data.category}</Link>
+      ))}
     </div>
+      </div>
     </>
   )
 }
