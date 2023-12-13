@@ -1,2 +1,2 @@
 # MiniProjects
-some mini projects using HTML,CSS and JavaScript.
+some mini projects using HTML,CSS and JavaScript and React.
